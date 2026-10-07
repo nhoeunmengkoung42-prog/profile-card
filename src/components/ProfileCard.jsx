@@ -1,5 +1,8 @@
+import { skills } from "../data/Skill";
 function ProfileCard() {
   return (
+
+   
     <div className="card">
 
       <img
@@ -11,9 +14,12 @@ function ProfileCard() {
       <h1>GOJO</h1>
 
       <div className="skills">
-        <span className="html">HTML&CSS</span>
-        <span className="php">PHP</span>
-        <span className="javascript">JavaScript</span>
+        {
+          skills.map((s)=>(
+            <span  key={s.id}className="html" style={{backgroundColor:s.color}}>{s.name}</span>
+      
+          ))
+        }
       </div>
 
       <button>Hire me!</button>
